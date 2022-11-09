@@ -2,6 +2,8 @@ package ar.edu.unlam.pb2;
 
 import static org.junit.Assert.*;
 
+import java.util.Set;
+
 import org.junit.Test;
 
 public class TestCases {
@@ -54,14 +56,18 @@ public class TestCases {
 		Sensor sensor1 = new Sensor(2, false);
 		Integer idAlarma= nuevaAlarma.getId();
 		String codigoActivacionAlarma= nuevaAlarma.getCodigoActivacion();
-		
 		((Administrador) administrador).agregarSensorALaAlarma( sensor1, nuevaAlarma);
 		
 		assertEquals(true, ((Administrador) administrador).activarSensorAAlarma(  sensor1, idAlarma, codigoActivacionAlarma, configurador));
 	}
 	@Test
 	public void queParaUnaAlarmaDeterminadaSePuedaObtenerUnaColeccionOrdenadaDeAccionEsDeTipoConfiguracionOrdenadasPorIdDeAccion() {
-		
+		Central centralAlarma = new Central("Nueva Central");
+		Alarma nuevaAlarma = new Alarma(1, "activado", "invalido", "primera alarma");
+		Usuario administrador = new Administrador(1, "candela");
+		Usuario configurador = new Configurador(1, "candela");
+		Accion accion = new Accion(1, nuevaAlarma, administrador,"20220405",TipoOperacion.CONFIGURACION);
+		Set<Accion> listaAcciones = nuevaAlarma.getAccionesRealizadas();
 	}
 		
 	
