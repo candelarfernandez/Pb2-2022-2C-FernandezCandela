@@ -66,8 +66,19 @@ public class TestCases {
 		Alarma nuevaAlarma = new Alarma(1, "activado", "invalido", "primera alarma");
 		Usuario administrador = new Administrador(1, "candela");
 		Usuario configurador = new Configurador(1, "candela");
-		Accion accion = new Accion(1, nuevaAlarma, administrador,"20220405",TipoOperacion.CONFIGURACION);
+		Accion accion1 = new Accion(3, nuevaAlarma, administrador,"20220405",TipoOperacion.CONFIGURACION);
+		Accion accion2 = new Accion(1, nuevaAlarma, administrador,"20220405",TipoOperacion.CONFIGURACION);
+		Accion accion3 = new Accion(4, nuevaAlarma, administrador,"20220405",TipoOperacion.CONFIGURACION);
+		Accion accion4 = new Accion(2, nuevaAlarma, administrador,"20220405",TipoOperacion.CONFIGURACION);
 		Set<Accion> listaAcciones = nuevaAlarma.getAccionesRealizadas();
+		nuevaAlarma.agregarAccion(accion1);
+		nuevaAlarma.agregarAccion(accion2);
+		nuevaAlarma.agregarAccion(accion3);
+		nuevaAlarma.agregarAccion(accion4);
+		for (Accion accion : listaAcciones) {
+			assertEquals((Integer)1, accion.getId());
+			break;
+		}
 	}
 		
 	

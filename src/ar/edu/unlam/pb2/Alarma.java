@@ -2,6 +2,7 @@ package ar.edu.unlam.pb2;
 
 import java.util.HashSet;
 import java.util.Set;
+import java.util.TreeSet;
 
 public class Alarma {
 	private Integer id;
@@ -19,7 +20,7 @@ public class Alarma {
 		this.codigoConfiguracion = codigoConfiguracion;
 		this.nombre = nombre;
 		this.usuariosValidos= new HashSet<>();
-		this.accionesRealizadas= new HashSet<>();
+		this.accionesRealizadas= new TreeSet<>();
 		this.sensores= new HashSet<>();
 	}
 
@@ -77,6 +78,11 @@ public class Alarma {
 
 	public void setSensores(Set<Sensor> sensores) {
 		this.sensores = sensores;
+	}
+
+	public void agregarAccion(Accion accion) {
+		this.accionesRealizadas.add(accion);
+		
 	}
 
 
