@@ -5,19 +5,22 @@ import java.util.Set;
 
 public class Alarma {
 	private Integer id;
-	private Boolean codigoActivacion;
-	private Boolean codigoConfiguracion;
+	private String codigoActivacion;
+	private String codigoConfiguracion;
 	private String nombre;
 	private Set<Usuario> usuariosValidos;
 	private Set<Accion> accionesRealizadas;
+	private Set<Sensor> sensores;
 	
-	public Alarma(Integer id, Boolean codigoActivacion, Boolean codigoConfiguracion, String nombre) {
+	
+	public Alarma(Integer id, String codigoActivacion, String codigoConfiguracion, String nombre) {
 		this.id = id;
 		this.codigoActivacion = codigoActivacion;
 		this.codigoConfiguracion = codigoConfiguracion;
 		this.nombre = nombre;
 		this.usuariosValidos= new HashSet<>();
 		this.accionesRealizadas= new HashSet<>();
+		this.sensores= new HashSet<>();
 	}
 
 	public Integer getId() {
@@ -28,19 +31,19 @@ public class Alarma {
 		this.id = id;
 	}
 
-	public Boolean getCodigoActivacion() {
+	public String getCodigoActivacion() {
 		return codigoActivacion;
 	}
 
-	public void setCodigoActivacion(Boolean codigoActivacion) {
+	public void setCodigoActivacion(String codigoActivacion) {
 		this.codigoActivacion = codigoActivacion;
 	}
 
-	public Boolean getCodigoConfiguracion() {
+	public String getCodigoConfiguracion() {
 		return codigoConfiguracion;
 	}
 
-	public void setCodigoConfiguracion(Boolean codigoConfiguracion) {
+	public void setCodigoConfiguracion(String codigoConfiguracion) {
 		this.codigoConfiguracion = codigoConfiguracion;
 	}
 
@@ -67,6 +70,16 @@ public class Alarma {
 	public void setAccionesRealizadas(Set<Accion> accionesRealizadas) {
 		this.accionesRealizadas = accionesRealizadas;
 	}
+
+	public Set<Sensor> getSensores() {
+		return sensores;
+	}
+
+	public void setSensores(Set<Sensor> sensores) {
+		this.sensores = sensores;
+	}
+
+
 	
 	
 	
