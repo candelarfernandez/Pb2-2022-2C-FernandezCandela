@@ -10,8 +10,6 @@ public class Administrador extends Usuario {
 	public Boolean agregarAlarma(Alarma alarma, Central central) {
 		central.getAlarmas().add(alarma);
 		return true;
-
-		
 	}
 
 	public Boolean agregarUsuario(Usuario configurador, Central centralAlarma, Alarma nuevaAlarma) throws CodigoAlarmaIncorrecto {
@@ -31,12 +29,12 @@ public class Administrador extends Usuario {
 		
 	}
 
-	public Boolean activarSensorAAlarma(Sensor sensor, Integer idAlarma, String codigoActivacionAlarma, Usuario configurador) {
+	public Boolean activarSensorAAlarma(Sensor sensor, Integer idAlarma, String codigoActivacionAlarma, Usuario configurador, Alarma nuevaAlarma, Central nuevaCentral) {
 		if(sensor.getEstado() == false) {
-			codigoActivacionAlarma="Desactivado";
+			nuevaCentral.getAlarmas().add(nuevaAlarma);
 			return true;
 		}
-		codigoActivacionAlarma="Activado";
+		nuevaCentral.getAlarmasDesactivadas().add(nuevaAlarma);
 		return false;
 		
 	}

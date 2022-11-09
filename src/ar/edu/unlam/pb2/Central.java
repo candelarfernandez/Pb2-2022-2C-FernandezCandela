@@ -6,10 +6,12 @@ import java.util.Set;
 public class Central {
 	private String nombre;
 	private Set<Alarma> alarmas;
+	private Set<Alarma> alarmasDesactivadas;
 
 	public Central(String nombre) {
 		this.nombre = nombre;
 		this.alarmas= new HashSet<>();
+		this.alarmasDesactivadas= new HashSet<>();
 	}
 
 	public String getNombre() {
@@ -24,6 +26,15 @@ public class Central {
 	public void setAlarmas(Set<Alarma> alarmas) {
 		this.alarmas = alarmas;
 	}
+
+	public Set<Alarma> getAlarmasDesactivadas() {
+		return alarmasDesactivadas;
+	}
+
+	public void setAlarmasDesactivadas(Set<Alarma> alarmasDesactivadas) {
+		this.alarmasDesactivadas = alarmasDesactivadas;
+	}
+	
 
 	
 	

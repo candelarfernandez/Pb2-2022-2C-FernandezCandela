@@ -1,6 +1,6 @@
 package ar.edu.unlam.pb2;
 
-public class Accion implements Comparable<Accion> {
+public class Accion implements Comparable<Accion>{
 	private Integer id;
 	private Alarma nuevAlarma;
 	private Usuario usuario;
@@ -46,7 +46,7 @@ public class Accion implements Comparable<Accion> {
 		this.tipo = tipo;
 	}
 	@Override
-	public int compareTo(Accion o) {
+    public int compareTo(Accion o) {
 		return this.id.compareTo(o.getId());
 	}
 	

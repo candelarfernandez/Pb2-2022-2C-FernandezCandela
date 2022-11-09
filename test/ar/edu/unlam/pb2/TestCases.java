@@ -58,7 +58,7 @@ public class TestCases {
 		String codigoActivacionAlarma= nuevaAlarma.getCodigoActivacion();
 		((Administrador) administrador).agregarSensorALaAlarma( sensor1, nuevaAlarma);
 		
-		assertEquals(true, ((Administrador) administrador).activarSensorAAlarma(  sensor1, idAlarma, codigoActivacionAlarma, configurador));
+		assertEquals(true, ((Administrador) administrador).activarSensorAAlarma(sensor1, idAlarma, codigoActivacionAlarma, configurador, nuevaAlarma, centralAlarma));
 	}
 	@Test
 	public void queParaUnaAlarmaDeterminadaSePuedaObtenerUnaColeccionOrdenadaDeAccionEsDeTipoConfiguracionOrdenadasPorIdDeAccion() {

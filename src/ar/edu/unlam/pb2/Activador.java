@@ -9,7 +9,6 @@ public class Activador extends Usuario implements Activable{
 
 	@Override
 	public Boolean activarDesactivarAlarma(Alarma alarmaa, String codgioActivacionAlarma) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
